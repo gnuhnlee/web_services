@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Blackletterpress - Trang chủ BLP với tin tức, bài viết nổi bật và thông tin cộng đồng.">
+    <title>Blackletterpress - BLP</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #f7ce84;
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+
+        .wrapper {
+            width: 1000px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        header.site-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+        }
+
+        .header-left {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            font-size: 20px;
+            color: #4a1500;
+        }
+
+        .header-center h1 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 800;
+            font-size: 58px;
+            color: #2b0c00;
+            margin: 0;
+            letter-spacing: 2px;
+            text-shadow: 2px 2px #d3a45c;
+        }
+
+        .header-right {
+            text-align: right;
+            font-size: 13px;
+            color: #4a1500;
+        }
+
+        .header-right p {
+            margin: 0 0 5px 0;
+        }
+
+        .search-box {
+            display: flex;
+            margin-top: 5px;
+        }
+
+        .search-box input[type="search"] {
+            padding: 6px 10px;
+            border: 1px solid #ccc;
+            width: 150px;
+            font-family: 'Roboto', sans-serif;
+            border-radius: 3px 0 0 3px;
+        }
+
+        .btn-green {
+            background: linear-gradient(to bottom, #4db362, #1d8236);
+            color: white;
+            border: 1px solid #145c26;
+            padding: 6px 15px;
+            cursor: pointer;
+            font-weight: 700;
+            font-family: 'Roboto', sans-serif;
+            border-radius: 0 3px 3px 0;
+        }
+
+        .btn-green:hover {
+            opacity: 0.92;
+        }
+
+        .container {
+            display: flex;
+            gap: 20px;
+            margin-bottom: 40px;
+        }
+
+        aside {
+            width: 250px;
+            flex: 0 0 250px;
+        }
+
+        .nav-menu {
+            margin-bottom: 20px;
+        }
+
+        .nav-menu a {
+            display: block;
+            background-color: #3e1201;
+            color: white;
+            text-decoration: none;
+            text-align: center;
+            padding: 14px;
+            margin-bottom: 10px;
+            font-weight: 600;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 16px;
+            border: 2px solid #5a1b02;
+            transition: background-color 0.2s ease;
+        }
+
+        .nav-menu a:hover,
+        .nav-menu a[aria-current="page"] {
+            background-color: #5a1b02;
+        }
+
+        .sidebar-box {
+            background-color: #fce4b3;
+            border: 1px solid #dca860;
+            padding: 15px;
+            margin-bottom: 20px;
+        }
+
+        .sidebar-box h2 {
+            margin-top: 0;
+            color: #5a1b02;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 16px;
+            text-align: center;
+            border-bottom: 1px solid #dca860;
+            padding-bottom: 10px;
+        }
+
+        .social-icons {
+            display: flex;
+            justify-content: space-around;
+            gap: 10px;
+        }
+
+        .social-icons a {
+            color: #337ab7;
+            text-decoration: none;
+            font-size: 20px;
+            font-weight: 700;
+        }
+
+        .news-box {
+            background-color: #d8aa60;
+            padding: 15px;
+        }
+
+        .news-box h2 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 16px;
+            color: #fff;
+            margin-top: 0;
+            margin-bottom: 15px;
+        }
+
+        .news-item {
+            padding-bottom: 15px;
+            margin-bottom: 15px;
+            border-bottom: 1px solid rgba(62, 18, 1, 0.25);
+        }
+
+        .news-item:last-of-type {
+            border-bottom: 0;
+            margin-bottom: 12px;
+        }
+
+        .news-item h3 {
+            font-family: 'Montserrat', sans-serif;
+            color: #fff;
+            font-size: 14px;
+            margin: 0 0 6px 0;
+        }
+
+        .news-item p {
+            font-size: 12px;
+            line-height: 1.5;
+            color: #333;
+            margin: 0 0 8px 0;
+        }
+
+        .news-item a {
+            font-size: 12px;
+            color: #3e1201;
+            font-weight: 700;
+        }
+
+        .news-box .btn-green {
+            width: 100%;
+            border-radius: 3px;
+            padding: 9px 12px;
+        }
+
+        main {
+            flex: 1;
+            background-color: #ffffff;
+            padding: 35px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+
+        article h2 {
+            font-family: 'Montserrat', sans-serif;
+            color: #4a1500;
+            font-size: 24px;
+            margin: 0 0 5px 0;
+        }
+
+        .post-meta {
+            font-size: 13px;
+            color: #666;
+            margin-bottom: 25px;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 10px;
+        }
+
+        article h3 {
+            font-family: 'Montserrat', sans-serif;
+            color: #111;
+            font-size: 18px;
+            text-align: center;
+            margin-top: 35px;
+            margin-bottom: 15px;
+        }
+
+        article p {
+            line-height: 1.6;
+            font-size: 14px;
+            margin-bottom: 15px;
+        }
+
+        .hero-gallery {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 12px;
+            margin-bottom: 20px;
+        }
+
+        .hero-gallery figure {
+            margin: 0;
+        }
+
+        .hero-gallery .featured {
+            grid-row: span 2;
+        }
+
+        figure {
+            margin: 0 0 20px 0;
+            text-align: center;
+        }
+
+        figure img {
+            width: 100%;
+            max-width: 100%;
+            height: auto;
+            display: block;
+            border-radius: 3px;
+            object-fit: cover;
+        }
+
+        .hero-gallery .featured img {
+            min-height: 330px;
+            object-fit: cover;
+        }
+
+        .hero-gallery .small img {
+            height: 159px;
+            object-fit: cover;
+        }
+
+        figcaption {
+            font-size: 12px;
+            color: #555;
+            margin-top: 8px;
+            font-style: italic;
+            text-align: left;
+        }
+
+        .content-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .content-card {
+            border-top: 1px solid #eee;
+            padding-top: 12px;
+        }
+
+        .content-card h3 {
+            text-align: left;
+            margin: 5px 0 10px 0;
+        }
+
+        .content-card img {
+            height: 170px;
+            object-fit: cover;
+        }
+
+        .read-more {
+            color: #337ab7;
+            text-decoration: none;
+            font-size: 13px;
+            font-weight: 700;
+        }
+
+        .read-more:hover {
+            text-decoration: underline;
+        }
+
+        .tags {
+            margin-top: 40px;
+            padding-top: 15px;
+            border-top: 1px solid #eee;
+            font-size: 13px;
+        }
+
+        .tags a {
+            color: #337ab7;
+            text-decoration: none;
+        }
+
+        .tags a:hover {
+            text-decoration: underline;
+        }
+
+        footer.site-footer {
+            display: flex;
+            justify-content: space-between;
+            padding: 40px 0;
+            border-top: 1px dotted #a87e41;
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        .footer-col {
+            width: 22%;
+            font-size: 12px;
+            color: #555;
+            line-height: 1.5;
+        }
+
+        .footer-col p {
+            margin: 0;
+        }
+
+        .icon-circle {
+            width: 50px;
+            height: 50px;
+            background-color: #d19a4e;
+            border-radius: 50%;
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 15px;
+            color: white;
+            font-size: 24px;
+        }
+
+        .copyright {
+            text-align: center;
+            font-size: 11px;
+            color: #777;
+            padding: 20px 0;
+        }
+    </style>
+</head>
+<body>
+<div class="wrapper">
+    <header class="site-header">
+        <div class="header-left">Blackletterpress</div>
+        <div class="header-center">
+            <h1>BLP</h1>
+        </div>
+        <div class="header-right">
+            <p>Your online source of trusted news</p>
+            <form action="#" class="search-box" role="search">
+                <input type="search" name="q" placeholder="Enter search query" aria-label="Tìm kiếm">
+                <button type="submit" class="btn-green">Search</button>
+            </form>
+        </div>
+    </header>
+
+    <div class="container">
+        <aside>
+            <nav class="nav-menu" aria-label="Điều hướng chính">
+                <a href="index_new.html" aria-current="page">HOME</a>
+                <a href="register.html">ABOUT</a>
+                <a href="media.html">NEWS</a>
+                <a href="media.html">BLOG</a>
+            </nav>
+
+            <section class="sidebar-box" aria-labelledby="connect-title">
+                <h2 id="connect-title">Connect with us:</h2>
+                <div class="social-icons">
+                    <a href="https://twitter.com/" target="_blank" rel="noopener noreferrer" aria-label="Twitter">🐦</a>
+                    <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer" aria-label="Facebook">📘</a>
+                    <a href="https://news.google.com/" target="_blank" rel="noopener noreferrer" aria-label="Google News">📰</a>
+                </div>
+            </section>
+
+            <section class="news-box" aria-labelledby="news-title">
+                <h2 id="news-title">Tin nổi bật</h2>
+
+                <article class="news-item">
+                    <h3>Blackletterpress và những câu chuyện cộng đồng</h3>
+                    <p>Khám phá các nội dung mới, hoạt động nổi bật và những câu chuyện đang được quan tâm.</p>
+                    <a href="media.html">Read more</a>
+                </article>
+
+                <article class="news-item">
+                    <h3>Công nghệ và những thay đổi tích cực</h3>
+                    <p>Cập nhật các chủ đề về công nghệ, sáng tạo và những xu hướng mới trong đời sống.</p>
+                    <a href="media.html">Read more</a>
+                </article>
+
+                <a href="media.html" class="btn-green" style="display:block; text-align:center; text-decoration:none;">View More</a>
+            </section>
+        </aside>
+
+        <main>
+            <article>
+                <header>
+                    <h2>Blackletterpress - Không gian chia sẻ và kết nối</h2>
+                    <div class="post-meta">Trang chủ BLP - Tin tức, bài viết và nội dung nổi bật</div>
+                </header>
+
+                <div class="hero-gallery">
+                    <figure class="featured">
+                        <img src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=1200&q=85" alt="Đội ngũ Blackletterpress trong một hoạt động cộng đồng">
+                        <figcaption>Hình ảnh hoạt động của đội ngũ Blackletterpress.</figcaption>
+                    </figure>
+
+                    <figure class="small">
+                        <img src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=800&q=85" alt="Thành viên Blackletterpress mỉm cười">
+                        <figcaption>Khoảnh khắc giao lưu và kết nối.</figcaption>
+                    </figure>
+
+                    <figure class="small">
+                        <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=800&q=85" alt="Nhóm bạn đồng hành trong hoạt động môi trường">
+                        <figcaption>Những người bạn cùng chung tinh thần hợp tác.</figcaption>
+                    </figure>
+                </div>
+
+                <section>
+                    <h3>Giới thiệu</h3>
+                    <p>Blackletterpress là không gian chia sẻ thông tin, câu chuyện và những nội dung đáng chú ý dành cho cộng đồng. Website được xây dựng với định hướng tạo ra một nơi để người đọc khám phá các bài viết, sự kiện và hoạt động mới.</p>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eleifend ligula vel velit varius fermentum. Nullam porta hendrerit metus id hendrerit. Maecenas consequat neque sed tellus commodo ultrices et et est. Maecenas non justo vitae dui vulputate rutrum sed a lacus.</p>
+                </section>
+
+                <section>
+                    <h3>Nội dung nổi bật</h3>
+                    <div class="content-grid">
+                        <article class="content-card">
+                            <img src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=800&q=85" alt="Đội ngũ làm việc cùng nhau">
+                            <h3>Hoạt động cộng đồng</h3>
+                            <p>Pellentesque dapibus, felis eget ornare ultrices, est est imperdiet magna, id ultrices odio leo sed erat. Maecenas nec est egestas ipsum bibendum iaculis.</p>
+                            <a href="media.html" class="read-more">Xem nội dung →</a>
+                        </article>
+
+                        <article class="content-card">
+                            <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=800&q=85" alt="Những người bạn trong hoạt động xanh">
+                            <h3>Ý tưởng và kết nối</h3>
+                            <p>Nulla accumsan posuere nisl. Cras eu consectetur turpis. Etiam condimentum, lorem ac imperdiet ultricies, velit arcu feugiat nunc, vel tristique sapien diam quis velit.</p>
+                            <a href="media.html" class="read-more">Đọc thêm →</a>
+                        </article>
+                    </div>
+                </section>
+
+                <section>
+                    <h3>Góc nhìn Blackletterpress</h3>
+                    <p>Maecenas non metus augue, sit amet tristique libero. In placerat urna quis orci hendrerit pretium. Donec luctus, magna rhoncus pretium tempor, odio orci consequat turpis, id rutrum elit tellus eu odio.</p>
+                    <p>Nunc sapien libero, faucibus quis vehicula quis, interdum eu mauris. Cras eu consectetur turpis. Etiam condimentum, lorem ac imperdiet ultricies, velit arcu feugiat nunc, vel tristique sapien diam quis velit.</p>
+                </section>
+
+                <div class="tags">
+                    Chủ đề:
+                    <a href="media.html">Tin tức</a>,
+                    <a href="media.html">Cộng đồng</a>,
+                    <a href="media.html">Công nghệ</a>,
+                    <a href="register.html">Đăng ký nhận tin</a>
+                </div>
+            </article>
+        </main>
+    </div>
+
+    <footer class="site-footer">
+        <div class="footer-col">
+            <div class="icon-circle">🏠</div>
+            <p>Thông tin tổng quan về Blackletterpress và các nội dung nổi bật dành cho cộng đồng.</p>
+        </div>
+        <div class="footer-col">
+            <div class="icon-circle">☕</div>
+            <p>Những câu chuyện, bài viết và hoạt động được chọn lọc để mang đến trải nghiệm đọc gần gũi.</p>
+        </div>
+        <div class="footer-col">
+            <div class="icon-circle">🌐</div>
+            <p>Kết nối với các kênh nội dung của BLP để cập nhật những thông tin mới.</p>
+        </div>
+        <div class="footer-col">
+            <div class="icon-circle">✏️</div>
+            <p>Đăng ký nhận thông tin và theo dõi các chủ đề bạn quan tâm trên Blackletterpress.</p>
+        </div>
+    </footer>
+
+    <div class="copyright">
+        © Copyright 2026 Blackletterpress. All rights reserved.
+    </div>
+</div>
+</body>
+</html>

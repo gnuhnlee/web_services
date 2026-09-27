@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Đăng ký nhận thông tin - BLP</title>
+    <title>Ngày hội Công nghệ Xanh 2026 - BLP</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
@@ -156,103 +156,83 @@
             box-shadow: 0 0 10px rgba(0,0,0,0.1);
         }
 
-        .register-header {
-            margin-bottom: 20px;
-        }
-        .register-header h2 {
+        article h2 {
             font-family: 'Montserrat', sans-serif;
             color: #4a1500;
             font-size: 24px;
-            margin: 0 0 10px 0;
+            margin: 0 0 5px 0;
         }
-        .register-header p {
-            font-size: 14px;
+        article .post-meta {
+            font-size: 13px;
+            color: #666;
+            margin-bottom: 25px;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 10px;
+        }
+        article .post-meta a {
             color: #333;
-            margin: 0;
+            text-decoration: underline;
         }
-
-        fieldset {
-            border: 1px solid #dcdcdc;
-            border-radius: 3px;
-            padding: 15px 20px;
-            margin-bottom: 20px;
-            background-color: transparent;
-        }
-        legend {
+        
+        article h3 {
             font-family: 'Montserrat', sans-serif;
-            font-size: 15px;
-            font-weight: 600;
-            color: #4a1500;
-            padding: 0 8px;
-        }
-
-        .form-group {
+            color: #111;
+            font-size: 18px;
+            text-align: center;
+            margin-top: 35px;
             margin-bottom: 15px;
         }
-        .form-group label {
-            display: block;
-            font-weight: 500;
-            margin-bottom: 6px;
-            color: #333;
-            font-size: 13px;
-        }
         
-        .form-control {
+        article p {
+            line-height: 1.6;
+            font-size: 14px;
+            margin-bottom: 15px;
+        }
+
+        figure {
+            margin: 0 0 20px 0;
+            text-align: center;
+        }
+        figure img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 3px;
+        }
+        figcaption {
+            font-size: 13px;
+            color: #555;
+            margin-top: 8px;
+            font-style: italic;
+        }
+
+        .media-container {
             width: 100%;
-            padding: 8px 10px;
-            border: 1px solid #ccc;
-            border-radius: 3px;
-            font-family: 'Roboto', sans-serif;
-            font-size: 13px;
-            transition: border-color 0.2s ease;
+            margin-bottom: 20px;
         }
-        .form-control:focus {
+        video, audio {
+            width: 100%;
+            border-radius: 5px;
             outline: none;
-            border-color: #1d8236;
         }
-        
-        .form-control-w50 {
-            width: 50%;
-            min-width: 250px;
-        }
-
-        .inline-group {
-            display: flex;
-            gap: 15px;
-            align-items: center;
-        }
-        
-        .radio-option, .checkbox-option {
-            display: flex;
-            align-items: center;
-            gap: 6px;
-            font-size: 13px;
-            cursor: pointer;
-            font-weight: 400 !important;
-        }
-        .radio-option input, .checkbox-option input {
-            cursor: pointer;
-            margin: 0;
-        }
-
-        .action-buttons {
-            display: flex;
-            gap: 10px;
-            margin-top: 10px;
-        }
-        .btn-action {
-            background: linear-gradient(to bottom, #4db362, #1d8236);
-            color: white;
-            border: 1px solid #145c26;
-            padding: 8px 20px;
-            font-size: 13px;
-            font-weight: 700;
-            font-family: 'Roboto', sans-serif;
-            cursor: pointer;
+        iframe {
+            width: 100%;
+            height: 350px;
+            border: 1px solid #ddd;
             border-radius: 3px;
         }
-        .btn-action:hover {
-            opacity: 0.9;
+        
+        .tags {
+            margin-top: 40px;
+            padding-top: 15px;
+            border-top: 1px solid #eee;
+            font-size: 13px;
+        }
+        .tags a {
+            color: #337ab7;
+            text-decoration: none;
+        }
+        .tags a:hover {
+            text-decoration: underline;
         }
 
         footer.site-footer {
@@ -341,102 +321,56 @@
         </aside>
 
         <main>
-            <section class="register-header">
-                <h2>Đăng ký nhận thông tin</h2>
-                <p>Điền thông tin bên dưới để nhận bản tin định kỳ. Các trường có dấu * là bắt buộc.</p>
-            </section>
+            <article>
+                <header>
+                    <h2>Ngày hội Công nghệ Xanh 2026</h2>
+                    <div class="post-meta">
+                        22/04/2026 - Tác giả: <a href="#">Ban tổ chức Blackletterpress</a>
+                    </div>
+                </header>
 
-            <form action="#" method="post">
-                
-                <fieldset>
-                    <legend>Thông tin tài khoản</legend>
-                    <div class="form-group">
-                        <label for="fullname">Họ và tên *</label>
-                        <input type="text" id="fullname" name="fullname" class="form-control form-control-w50" placeholder="Nguyễn Văn A" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="email">Email *</label>
-                        <input type="email" id="email" name="email" class="form-control form-control-w50" placeholder="ban@example.com" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="password">Mật khẩu * (tối thiểu 8 ký tự)</label>
-                        <input type="password" id="password" name="password" class="form-control form-control-w50" minlength="8" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="phone">Số điện thoại * (10 số, bắt đầu bằng 0)</label>
-                        <input type="tel" id="phone" name="phone" class="form-control form-control-w50" pattern="[0][0-9]{9}" required>
-                    </div>
-                </fieldset>
+                <figure>
+                    <img src="https://evoseating.com.vn/wp-content/uploads/2023/06/du-an-900-ghe-hoi-truong-evo7606bta-do-evo-cung-cap-cho-gsc.jpg" alt="Hội trường chính trong ngày khai mạc sự kiện">
+                    <figcaption>Hội trường chính trong ngày khai mạc sự kiện năm 2025.</figcaption>
+                </figure>
 
-                <fieldset>
-                    <legend>Thông tin cá nhân</legend>
-                    <div class="form-group">
-                        <label for="dob">Ngày sinh *</label>
-                        <input type="date" id="dob" name="dob" class="form-control form-control-w50" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="age">Độ tuổi *</label>
-                        <input type="text" id="age" name="age" class="form-control form-control-w50" required>
-                    </div>
-                    <div class="form-group">
-                        <label>Giới tính *</label>
-                        <div class="inline-group">
-                            <label class="radio-option">
-                                <input type="radio" name="gender" value="male" required> Nam
-                            </label>
-                            <label class="radio-option">
-                                <input type="radio" name="gender" value="female"> Nữ
-                            </label>
-                            <label class="radio-option">
-                                <input type="radio" name="gender" value="other"> Khác
-                            </label>
-                        </div>
-                    </div>
-                </fieldset>
+                <section>
+                    <h3>Giới thiệu sự kiện</h3>
+                    <p>Ngày hội Công nghệ Xanh 2026 quy tụ các chuyên gia và doanh nghiệp theo đuổi giải pháp công nghệ bền vững. Sự kiện gồm chuỗi tọa đàm, khu trưng bày sản phẩm và các buổi hội thảo dành cho sinh viên.</p>
+                </section>
 
-                <fieldset>
-                    <legend>Tuỳ chọn nhận tin</legend>
-                    <div class="form-group">
-                        <label>Chủ đề quan tâm</label>
-                        <div class="inline-group">
-                            <label class="checkbox-option">
-                                <input type="checkbox" name="topic" value="news"> Tin tức
-                            </label>
-                            <label class="checkbox-option">
-                                <input type="checkbox" name="topic" value="blog"> Blog
-                            </label>
-                            <label class="checkbox-option">
-                                <input type="checkbox" name="topic" value="events"> Sự kiện
-                            </label>
-                        </div>
+                <section>
+                    <h3>Video giới thiệu</h3>
+                    <div class="media-container">
+                        <video controls poster="https://www.w3schools.com/html/mov_bbb.mp4">
+                            <source src="demo-video.mp4" type="video/mp4">
+                            Trình duyệt của bạn không hỗ trợ thẻ video HTML5.
+                        </video>
                     </div>
-                    <div class="form-group">
-                        <label for="region">Khu vực</label>
-                        <select id="region" name="region" class="form-control form-control-w50">
-                            <option value="">-- Chọn khu vực --</option>
-                            <option value="mienbac">Miền Bắc</option>
-                            <option value="mientrung">Miền Trung</option>
-                            <option value="miennam">Miền Nam</option>
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <label for="message">Lời nhắn</label>
-                        <textarea id="message" name="message" rows="3" class="form-control form-control-w50" style="resize: vertical;" placeholder="Bạn muốn nhận nội dung gì?"></textarea>
-                    </div>
-                </fieldset>
+                </section>
 
-                <div class="form-group">
-                    <label class="checkbox-option" style="color: #333; font-size: 13px;">
-                        <input type="checkbox" name="terms" required> Tôi đồng ý với điều khoản sử dụng *
-                    </label>
+                <section>
+                    <h3>Podcast: Trò chuyện cùng chuyên gia</h3>
+                    <p>Lắng nghe những chia sẻ chuyên sâu về xu hướng chuyển đổi xanh và công nghệ tái tạo trong năm 2026.</p>
+                    <div class="media-container">
+                        <audio controls>
+                            <source src="demo-audio.mp3" type="audio/mpeg">
+                            Trình duyệt của bạn không hỗ trợ thẻ audio HTML5.
+                        </audio>
+                    </div>
+                </section>
+
+                <section>
+                    <h3>Bản đồ địa điểm tổ chức</h3>
+                    <div class="media-container">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3724.096814183571!2d105.78009371540224!3d21.028811885998316!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3135ab4cd0c66f05%3A0xea31563511af2e54!2zSMOgIE7hu5lp!5e0!3m2!1svi!2s!4v1620000000000!5m2!1svi!2s" allowfullscreen="" loading="lazy"></iframe>
+                    </div>
+                </section>
+
+                <div class="tags">
+                    Chủ đề: <a href="#">Công nghệ xanh</a>, <a href="#">Phát triển bền vững</a>, <a href="#">Sự kiện 2026</a>
                 </div>
-
-                <div class="action-buttons">
-                    <button type="submit" class="btn-action">Đăng ký</button>
-                    <button type="reset" class="btn-action">Nhập lại</button>
-                </div>
-
-            </form>
+            </article>
         </main>
     </div>
 
@@ -459,7 +393,7 @@
         </div>
     </footer>
     <div class="copyright">
-        © Copyright 2011 Company name. All rights reserved.
+        © Copyright 2026 Blackletterpress. All rights reserved.
     </div>
 </div>
 
